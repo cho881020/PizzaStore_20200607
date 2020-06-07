@@ -1,5 +1,6 @@
 package kr.co.tjoeun.pizzastore_20200607
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,7 +26,11 @@ class MainActivity : BaseActivity() {
             val clickedStore = pizzaStoreList[position]
             
 //            가게 상세 조회 화면으로 이동
-            
+            val myIntent = Intent(mContext, ViewPizzaStoreDetailActivity::class.java)
+//            클릭한 가게를 상세조회 화면으로 전달.
+            myIntent.putExtra("store", clickedStore)
+            startActivity(myIntent)
+
             
         }
 
